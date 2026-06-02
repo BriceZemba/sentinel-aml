@@ -1,0 +1,9 @@
+{
+  "$comment": "CrewAI coded agent. Entry point: src/runner.py:run(input_dict)->dict. Package with the UiPath CLI and deploy as a process; swap behind the Maestro Investigation stage in place of the LangGraph variant. Add resource bindings here when wiring real connectors.",
+  "entryPoints": [
+    { "filePath": "src/runner.py", "function": "run" }
+  ],
+  "settings": {
+    "directoriesToIgnore": [".venv", "__pycache__"]
+  }
+}

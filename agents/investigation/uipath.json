@@ -1,0 +1,10 @@
+{
+  "$comment": "Minimal config. Running `uipath init` regenerates entry-points.json from langgraph.json. Add resource bindings (Orchestrator assets, buckets, Context Grounding indexes) here when wiring real systems.",
+  "settings": {
+    "fileExtensionsIncluded": [],
+    "directoriesToIgnore": [".venv", "__pycache__"]
+  },
+  "runtime": {
+    "internalArguments": {}
+  }
+}

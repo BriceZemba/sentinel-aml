@@ -1,0 +1,28 @@
+{
+  "sanctions": [
+    { "name": "Blue Lagoon Ltd", "list": "OFAC-SDN", "program": "RUSSIA-EO14024", "country": "VG" },
+    { "name": "Dmitri Sokolov", "list": "EU-CONSOLIDATED", "program": "RUSSIA", "country": "RU" }
+  ],
+  "pep": [
+    { "name": "Viktor Marchenko", "role": "Former regional minister (foreign)", "country": "CY" }
+  ],
+  "adverse_media": [
+    {
+      "entity": "Halcyon Capital Partners",
+      "headline": "Regulator probes Halcyon Capital over layering allegations",
+      "source": "FinNews Daily",
+      "date": "2026-03-18",
+      "sentiment": "negative",
+      "tags": ["money-laundering", "regulatory"]
+    },
+    {
+      "entity": "Orient Star Trading",
+      "headline": "Orient Star named in trade-based laundering investigation",
+      "source": "Gulf Business Wire",
+      "date": "2026-02-09",
+      "sentiment": "negative",
+      "tags": ["trade-based-laundering"]
+    }
+  ],
+  "high_risk_jurisdictions": ["VG", "AE", "CY", "RU", "MT", "HK"]
+}

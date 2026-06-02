@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.python-version
+
+# Env / secrets
+.env
+*.env
+!.env.example
+
+# UiPath build artifacts
+*.nupkg
+.uipath/
+entry-points.json
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs / local runs
+*.log
+.runs/
+local_output/
+
+# Deck build artifacts (keep the .pptx and build_deck.js)
+docs/deck/slide-*.jpg
+docs/deck/*.pdf

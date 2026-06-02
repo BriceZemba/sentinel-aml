@@ -1,0 +1,6 @@
+{
+  "$comment": "Run `uipath init` to regenerate entry-points.json from langgraph.json. The human_review interrupt maps to an Action Center task; configure the target action app + folder during deployment.",
+  "settings": {
+    "directoriesToIgnore": [".venv", "__pycache__"]
+  }
+}
