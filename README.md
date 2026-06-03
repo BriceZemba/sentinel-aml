@@ -1,4 +1,4 @@
-# Sentinel — Agentic AML Investigation Case Manager
+# Sentinel Agentic AML Investigation Case Manager
 
 > **UiPath AgentHack 2026 · Track 1: UiPath Maestro Case**
 > An agentic financial-crime investigation desk that turns transaction-monitoring
@@ -74,8 +74,8 @@ a human.
 
 ## Coding agents (bonus)
 
-This entire repository — the LangGraph crews, the risk-scoring logic, the tests,
-and the deployment scripts — was built using **Claude Code** driving the **UiPath
+This entire repository the LangGraph crews, the risk-scoring logic, the tests,
+and the deployment scripts was built using **Claude Code** driving the **UiPath
 `uip` CLI and skills** ("UiPath for Coding Agents"). Evidence (prompt log,
 screenshots, the exact CLI flow) is in **[CODING_AGENTS.md](CODING_AGENTS.md)**.
 
