@@ -2,7 +2,7 @@
 
 > **UiPath AgentHack 2026 · Track 1: UiPath Maestro Case**
 > An agentic financial-crime investigation desk that turns transaction-monitoring
-> alerts into regulator-ready dispositions — orchestrated end to end by UiPath
+> alerts into regulator-ready dispositions orchestrated end to end by UiPath
 > Maestro Case, with a compliance officer accountable for every filing.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
