@@ -10,8 +10,8 @@ from __future__ import annotations
 from collections import defaultdict
 from datetime import date
 
-from .. import data_access as dao
-from ..state import InvestigationState
+import data_access as dao
+from state import InvestigationState
 
 CTR_THRESHOLD = 10000
 STRUCTURING_BAND = 0.90  # transactions in [band*threshold, threshold)

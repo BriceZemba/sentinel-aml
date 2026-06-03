@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Agent",
+  "Name": "sentinel-investigator",
+  "Description": "Sentinel AML Investigator - LangGraph coded agent deployed to UiPath",
+  "MainFile": null
+}

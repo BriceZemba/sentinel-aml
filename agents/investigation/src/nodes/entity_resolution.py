@@ -6,8 +6,8 @@ evidence and red flags into shared state.
 """
 from __future__ import annotations
 
-from .. import data_access as dao
-from ..state import InvestigationState
+import data_access as dao
+from state import InvestigationState
 
 
 def entity_resolution(state: InvestigationState) -> dict:

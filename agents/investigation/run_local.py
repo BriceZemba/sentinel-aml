@@ -12,10 +12,10 @@ import sys
 from pathlib import Path
 
 # Allow `python run_local.py` from the agent folder without installing the package.
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from src.data_access import _load  # noqa: E402
-from src.graph import graph  # noqa: E402
+from data_access import _load  # noqa: E402
+from graph import graph  # noqa: E402
 
 
 def main() -> None:

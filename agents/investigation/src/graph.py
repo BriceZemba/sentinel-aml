@@ -14,14 +14,22 @@ models become the agent's UiPath contract (trigger form + case data out).
 """
 from __future__ import annotations
 
+import os
+import sys
+
+# UiPath's graph loader imports this file standalone (no parent package), which
+# breaks relative imports. Put this agent's own src/ dir on sys.path and use
+# absolute imports so the SAME code runs locally, in tests, and on UiPath.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from langgraph.graph import END, START, StateGraph
 
-from .models import InvestigationInput, InvestigationOutput
-from .nodes.adverse_media import adverse_media
-from .nodes.entity_resolution import entity_resolution
-from .nodes.synthesize import synthesize
-from .nodes.transaction_analysis import transaction_analysis
-from .state import InvestigationState
+from models import InvestigationInput, InvestigationOutput
+from nodes.adverse_media import adverse_media
+from nodes.entity_resolution import entity_resolution
+from nodes.synthesize import synthesize
+from nodes.transaction_analysis import transaction_analysis
+from state import InvestigationState
 
 
 def _ingest(state: InvestigationState) -> dict:

@@ -11,10 +11,10 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from src.data_access import _load  # noqa: E402
-from src.runner import run  # noqa: E402
+from data_access import _load  # noqa: E402
+from runner import run  # noqa: E402
 
 
 def main() -> None:

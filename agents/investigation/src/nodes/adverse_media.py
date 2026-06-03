@@ -6,8 +6,8 @@ web search); offline it reads the curated adverse_media fixtures.
 """
 from __future__ import annotations
 
-from .. import data_access as dao
-from ..state import InvestigationState
+import data_access as dao
+from state import InvestigationState
 
 
 def adverse_media(state: InvestigationState) -> dict:

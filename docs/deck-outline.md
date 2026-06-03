@@ -1,9 +1,19 @@
-# Presentation deck outline (use UiPath's template)
+# Presentation deck outline
+
+> ✅ **The deck is already built** at [`deck/Sentinel-Deck.pptx`](deck/Sentinel-Deck.pptx),
+> styled to match the **official UiPath AgentHack template** (teal title + thank-you,
+> orange foot bars, teal data table, clean corporate look, no icons). Regenerate it
+> any time with `node deck/build_deck.js`. It has 8 slides:
+> **1** Title · **2** Team (fill placeholders) · **3** Problem & Solution ·
+> **4** How it works (5 stages) · **5** Solution architecture · **6** Benefits &
+> technologies (table) · **7** Platform depth & coding-agent bonus · **8** Thank you.
+>
+> Before submitting: fill the **Team** slide and paste your **GitHub link** on the
+> closing slide. The outline below documents the content rationale.
 
 A completed deck is a required submission item *and* feeds the finalist
-Presentation score. Use the **official AgentHack template** linked from the
-[resources page](https://uipath-agenthack.devpost.com/resources); map your content
-onto these slides. Keep it to ~10–12 slides.
+Presentation score. The official AgentHack template is linked from the
+[resources page](https://uipath-agenthack.devpost.com/resources). Keep it under 10 slides.
 
 1. **Title** — Sentinel: Agentic AML Investigation Case Manager · Track 1 · team + roles.
 2. **Problem** — 95% false positives, manual investigations, mandatory human sign-off, cost/risk. One stat-heavy slide.

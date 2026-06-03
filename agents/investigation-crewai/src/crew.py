@@ -14,7 +14,7 @@ import os
 from crewai import Agent, Crew, LLM, Process, Task
 from crewai.tools import tool
 
-from . import analysis
+import analysis
 
 # ---- tools (thin wrappers over the framework-free analysis core) ----
 

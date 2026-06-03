@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from . import data_access as dao
+import data_access as dao
 
 CTR_THRESHOLD = 10000
 STRUCTURING_BAND = 0.90

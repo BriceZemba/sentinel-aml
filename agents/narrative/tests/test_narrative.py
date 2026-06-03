@@ -4,12 +4,12 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from langgraph.checkpoint.memory import MemorySaver  # noqa: E402
 from langgraph.types import Command  # noqa: E402
 
-from src.graph import build_graph  # noqa: E402
+from graph import build_graph  # noqa: E402
 
 SAMPLE = {
     "alert_id": "ALT-1", "customer_id": "C-1", "customer_name": "Acme Co",

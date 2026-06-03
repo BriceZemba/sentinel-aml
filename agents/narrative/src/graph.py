@@ -19,12 +19,20 @@ The human's response shape:
 """
 from __future__ import annotations
 
+import os
+import sys
+
+# UiPath's graph loader imports this file standalone (no parent package), which
+# breaks relative imports. Put this agent's own src/ dir on sys.path and use
+# absolute imports so the SAME code runs locally, in tests, and on UiPath.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from langgraph.graph import END, START, StateGraph
 from langgraph.types import interrupt
 
-from .models import NarrativeInput, NarrativeOutput
-from .narrative import draft_narrative
-from .state import NarrativeState
+from models import NarrativeInput, NarrativeOutput
+from narrative import draft_narrative
+from state import NarrativeState
 
 
 def draft(state: NarrativeState) -> dict:

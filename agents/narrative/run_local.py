@@ -12,12 +12,12 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from langgraph.checkpoint.memory import MemorySaver  # noqa: E402
 from langgraph.types import Command  # noqa: E402
 
-from src.graph import build_graph  # noqa: E402
+from graph import build_graph  # noqa: E402
 
 SAMPLE = {
     "alert_id": "ALT-2026-0512-002",

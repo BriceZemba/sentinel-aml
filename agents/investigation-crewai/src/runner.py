@@ -13,9 +13,14 @@ Two execution modes, chosen automatically:
 from __future__ import annotations
 
 import os
+import sys
 
-from . import analysis
-from .models import InvestigationInput, InvestigationOutput
+# UiPath imports this entry file standalone (no parent package); put src/ on the
+# path and use absolute imports so the same code runs locally and on UiPath.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+import analysis
+from models import InvestigationInput, InvestigationOutput
 
 
 def _deterministic(inp: InvestigationInput) -> InvestigationOutput:
@@ -58,7 +63,7 @@ def run(input_dict: dict) -> dict:
     # Crew mode. If anything in the LLM run fails, fall back to deterministic so a
     # case is never left without a result.
     try:
-        from .crew import build_crew
+        from crew import build_crew
 
         result = build_crew().kickoff(inputs=inp.model_dump())
         out = _parse_crew_output(str(result), inp)

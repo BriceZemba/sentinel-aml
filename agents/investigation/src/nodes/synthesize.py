@@ -7,8 +7,8 @@ never the score itself. This separation keeps the decision defensible.
 """
 from __future__ import annotations
 
-from ..llm import get_llm
-from ..state import InvestigationState
+from llm import get_llm
+from state import InvestigationState
 
 _SEVERITY_WEIGHT = {"info": 0, "low": 5, "medium": 12, "high": 22, "critical": 40}
 

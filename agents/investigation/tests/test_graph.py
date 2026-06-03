@@ -4,10 +4,10 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from src.data_access import _load  # noqa: E402
-from src.graph import graph  # noqa: E402
+from data_access import _load  # noqa: E402
+from graph import graph  # noqa: E402
 
 
 def _run(alert_id: str) -> dict:
