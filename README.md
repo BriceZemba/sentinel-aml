@@ -20,7 +20,7 @@ for compliance sign-off. It is slow, expensive, inconsistent, and **mandated by
 law to keep a human accountable** for the final filing decision.
 
 This is the textbook case for **agentic case management**: the *goal* is fixed
-(decide and document each alert correctly), but the *path is not* — every
+(decide and document each alert correctly), but the *path is not* every
 investigation branches differently as evidence emerges, loops back when a case is
 thin, and escalates when sanctions or SLAs are in play.
 
@@ -54,19 +54,19 @@ them and keeps a complete audit trail.
 
 | Component | Role in Sentinel |
 |---|---|
-| **UiPath Maestro — Case Management** | Orchestrates the 5-stage case lifecycle, SLAs, escalation, audit trail (Case Manager + Stage Manager agents) |
+| **UiPath Maestro  Case Management** | Orchestrates the 5-stage case lifecycle, SLAs, escalation, audit trail (Case Manager + Stage Manager agents) |
 | **Agent Builder (low-code agents)** | Triage Agent, Quality Review Agent |
 | **Coded Agents (Python SDK + `uipath-langchain`)** | Investigator and Narrator LangGraph agents |
 | **Action Center** | Human-in-the-loop MLRO sign-off (the Narrator's interrupt) |
 | **Studio Web / API Workflows + RPA** | DataFetcher, Filer, Notifier robots |
 | **Document Understanding (IDP)** | KYC document extraction |
 | **Orchestrator** | Hosts/schedules the coded agents and robots; job logs feed the audit trail |
-| **UiPath for Coding Agents (`uip` CLI + skills)** | This solution was **built and deployed with Claude Code** — see [CODING_AGENTS.md](CODING_AGENTS.md) |
+| **UiPath for Coding Agents (`uip` CLI + skills)** | This solution was **built and deployed with Claude Code**  see [CODING_AGENTS.md](CODING_AGENTS.md) |
 
 ## Agent type
 
-**Both.** Sentinel deliberately blends **low-code agents** (Triage, QA — Agent
-Builder) with **coded agents** (Investigator, Narrator — Python/LangGraph deployed
+**Both.** Sentinel deliberately blends **low-code agents** (Triage, QA  Agent
+Builder) with **coded agents** (Investigator, Narrator Python/LangGraph deployed
 via the UiPath Python SDK), plus deterministic **RPA/API robots**, all governed by
 Maestro. This hybrid is intentional: reasoning tasks go to agents, exact
 system-of-record tasks go to robots, and the legally accountable decision goes to
@@ -87,9 +87,9 @@ screenshots, the exact CLI flow) is in **[CODING_AGENTS.md](CODING_AGENTS.md)**.
 sentinel-aml/
 ├── agents/
 │   ├── triage/              Triage Agent spec (Agent Builder, low-code)
-│   ├── investigation/       Investigator — LangGraph coded agent (tested, runnable offline)
-│   ├── investigation-crewai/ Investigator — CrewAI variant, SAME contract (drop-in swap)
-│   ├── narrative/           Narrator — LangGraph coded agent w/ Action Center HITL
+│   ├── investigation/       Investigator  LangGraph coded agent (tested, runnable offline)
+│   ├── investigation-crewai/ Investigator  CrewAI variant, SAME contract (drop-in swap)
+│   ├── narrative/           Narrator  LangGraph coded agent w/ Action Center HITL
 │   └── qa/                  Quality Review Agent spec (Agent Builder, low-code)
 ├── rpa/                DataFetcher / Filer / Notifier workflow contracts + IDP
 ├── data/              Mock core-banking, transactions, alerts, watchlists (offline demo)
@@ -109,19 +109,19 @@ sentinel-aml/
 └── CODING_AGENTS.md   How Claude Code built this (bonus-point evidence)
 ```
 
-## Quickstart (run the agents offline — no UiPath account needed)
+## Quickstart (run the agents offline no UiPath account needed)
 
 Prerequisites: **Python 3.11–3.13**, `git`.
 
 ```bash
-# 1) Investigator — turn an alert into a scored, evidence-backed recommendation
+# 1) Investigator  turn an alert into a scored, evidence-backed recommendation
 cd agents/investigation
 python -m venv .venv && . .venv/Scripts/activate     # macOS/Linux: source .venv/bin/activate
 pip install langgraph langchain-core pydantic pytest
 python run_local.py ALT-2026-0512-002                # sanctions+layering case -> ESCALATE
 pytest -q                                            # 3 passing tests
 
-# 2) Narrator — draft a SAR and walk the human-in-the-loop interrupt/resume
+# 2) Narrator  draft a SAR and walk the human-in-the-loop interrupt/resume
 cd ../narrative
 python -m venv .venv && . .venv/Scripts/activate
 pip install langgraph langchain-core pydantic pytest
@@ -137,9 +137,9 @@ so judges can test with zero credentials).
 ## Deploy to UiPath (full solution)
 
 Follow, in order:
-1. **[docs/deploy-coded-agents.md](docs/deploy-coded-agents.md)** — `uip auth → init → pack → publish`, run on Orchestrator.
-2. **[docs/agent-builder-setup.md](docs/agent-builder-setup.md)** — build Triage + QA agents.
-3. **[docs/maestro-case-setup.md](docs/maestro-case-setup.md)** — define the case, stages, SLAs, escalation, and wire every actor.
+1. **[docs/deploy-coded-agents.md](docs/deploy-coded-agents.md)**  `uip auth → init → pack → publish`, run on Orchestrator.
+2. **[docs/agent-builder-setup.md](docs/agent-builder-setup.md)**  build Triage + QA agents.
+3. **[docs/maestro-case-setup.md](docs/maestro-case-setup.md)**  define the case, stages, SLAs, escalation, and wire every actor.
 
 ## License
 
