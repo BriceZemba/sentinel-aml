@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Agent",
+  "Name": "sentinel-narrator",
+  "Description": "Sentinel SAR Narrator LangGraph coded agent with Action Center HITL",
+  "MainFile": null
+}

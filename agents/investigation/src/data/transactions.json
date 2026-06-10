@@ -1,0 +1,20 @@
+{
+  "ACC-558120": [
+    { "txn_id": "T-90001", "date": "2026-05-02", "direction": "credit", "amount_usd": 9400, "counterparty": "Cyprus Holdings Ltd", "counterparty_country": "CY", "channel": "wire", "memo": "consulting" },
+    { "txn_id": "T-90002", "date": "2026-05-03", "direction": "credit", "amount_usd": 9600, "counterparty": "Cyprus Holdings Ltd", "counterparty_country": "CY", "channel": "wire", "memo": "consulting" },
+    { "txn_id": "T-90003", "date": "2026-05-05", "direction": "credit", "amount_usd": 9550, "counterparty": "Aegean Partners", "counterparty_country": "CY", "channel": "wire", "memo": "services" },
+    { "txn_id": "T-90004", "date": "2026-05-06", "direction": "debit", "amount_usd": 28000, "counterparty": "Far East Components Co", "counterparty_country": "HK", "channel": "wire", "memo": "inventory" },
+    { "txn_id": "T-90005", "date": "2026-05-09", "direction": "credit", "amount_usd": 9700, "counterparty": "Aegean Partners", "counterparty_country": "CY", "channel": "wire", "memo": "services" },
+    { "txn_id": "T-90006", "date": "2026-05-12", "direction": "debit", "amount_usd": 9900, "counterparty": "ATM Withdrawal", "counterparty_country": "US", "channel": "atm", "memo": "" }
+  ],
+  "ACC-661004": [
+    { "txn_id": "T-70001", "date": "2026-05-04", "direction": "credit", "amount_usd": 3200, "counterparty": "Lincoln School District", "counterparty_country": "US", "channel": "ach", "memo": "payroll" },
+    { "txn_id": "T-70002", "date": "2026-05-11", "direction": "debit", "amount_usd": 1800, "counterparty": "Sunrise Apartments", "counterparty_country": "US", "channel": "ach", "memo": "rent" }
+  ],
+  "ACC-770233": [
+    { "txn_id": "T-80001", "date": "2026-05-01", "direction": "credit", "amount_usd": 240000, "counterparty": "Orient Star Trading", "counterparty_country": "AE", "channel": "wire", "memo": "advisory fee" },
+    { "txn_id": "T-80002", "date": "2026-05-01", "direction": "debit", "amount_usd": 238500, "counterparty": "Blue Lagoon Ltd", "counterparty_country": "VG", "channel": "wire", "memo": "investment" },
+    { "txn_id": "T-80003", "date": "2026-05-08", "direction": "credit", "amount_usd": 195000, "counterparty": "Orient Star Trading", "counterparty_country": "AE", "channel": "wire", "memo": "advisory fee" },
+    { "txn_id": "T-80004", "date": "2026-05-08", "direction": "debit", "amount_usd": 193000, "counterparty": "Blue Lagoon Ltd", "counterparty_country": "VG", "channel": "wire", "memo": "investment" }
+  ]
+}

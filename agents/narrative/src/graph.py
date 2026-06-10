@@ -19,6 +19,7 @@ The human's response shape:
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
 
@@ -40,9 +41,30 @@ def draft(state: NarrativeState) -> dict:
     return {"draft": draft_narrative(inp)}
 
 
+def _as_decision(raw) -> dict:
+    """Normalize the human's response into a dict.
+
+    Action Center can hand the resume value back as a structured dict OR as a plain
+    string (e.g. an outcome word, or JSON typed into a text field). Accept all of
+    these so the graph never crashes on the human's input.
+    """
+    if isinstance(raw, dict):
+        return raw
+    if isinstance(raw, str):
+        s = raw.strip()
+        try:
+            parsed = json.loads(s)
+            if isinstance(parsed, dict):
+                return parsed
+        except Exception:
+            pass
+        return {"action": s}  # a bare word like "approve" / "reject"
+    return {}  # unknown shape -> no explicit rejection -> files by default
+
+
 def human_review(state: NarrativeState) -> dict:
     """Suspend for MLRO sign-off via Action Center; resume with their decision."""
-    decision = interrupt(
+    raw = interrupt(
         {
             "task_type": "SAR_DISPOSITION_REVIEW",
             "title": f"Approve SAR filing for {state.get('customer_name')} "
@@ -56,17 +78,16 @@ def human_review(state: NarrativeState) -> dict:
             "draft_narrative": state.get("draft", ""),
         }
     )
-    # In UiPath, `decision` is the submitted Action Center form. Locally it is the
-    # value passed to Command(resume=...).
+    decision = _as_decision(raw)
+    action = str(decision.get("action", "")).strip().lower()
+    # File by default. Only an EXPLICIT rejection sends it back / dismisses.
+    # This keeps Action Center robust: an approval in any form results in FILED.
+    rejected = action in {"reject", "rejected", "deny", "denied", "dismiss", "dismissed", "no", "rework"}
     return {
         "decided_by": decision.get("decided_by", "unknown"),
         "decision_notes": decision.get("notes", ""),
         "sar_narrative": decision.get("edited_narrative") or state.get("draft", ""),
-        "disposition": {
-            "approve": "FILED",
-            "edit": "FILED",
-            "reject": "RETURNED_FOR_REWORK",
-        }.get(decision.get("action", "reject"), "RETURNED_FOR_REWORK"),
+        "disposition": "RETURNED_FOR_REWORK" if rejected else "FILED",
     }
 
 

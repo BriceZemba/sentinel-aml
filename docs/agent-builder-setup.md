@@ -28,7 +28,7 @@ shows both low-code and coded agents working together.
 5. Publish.
 
 ## Tips for scoring well
-- Give each agent a **tight, schema-constrained output** — judges reward
+- Give each agent a **tight, schema-constrained output** judges reward
   deliberate design over a chatty prompt.
 - Use **Context Grounding** for at least one agent: grounding the Triage or QA
   agent in the actual AML policy is a concrete "deep platform usage" point.

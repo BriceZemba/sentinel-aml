@@ -1,0 +1,48 @@
+{
+  "CUST-10042": {
+    "customer_id": "CUST-10042",
+    "legal_name": "Northbridge Trading LLC",
+    "type": "business",
+    "incorporation_country": "US",
+    "incorporation_date": "2023-11-02",
+    "risk_rating": "medium",
+    "kyc_status": "verified",
+    "kyc_last_reviewed": "2025-12-15",
+    "beneficial_owners": [
+      { "name": "Viktor Marchenko", "ownership_pct": 90, "nationality": "CY" },
+      { "name": "Anna Petrova", "ownership_pct": 10, "nationality": "CY" }
+    ],
+    "accounts": ["ACC-558120"],
+    "expected_monthly_volume_usd": 45000,
+    "business_description": "Wholesale electronics import/export"
+  },
+  "CUST-20871": {
+    "customer_id": "CUST-20871",
+    "legal_name": "Maria Gonzalez",
+    "type": "individual",
+    "incorporation_country": "US",
+    "nationality": "US",
+    "risk_rating": "low",
+    "kyc_status": "verified",
+    "kyc_last_reviewed": "2025-08-01",
+    "accounts": ["ACC-661004"],
+    "expected_monthly_volume_usd": 6000,
+    "occupation": "Schoolteacher"
+  },
+  "CUST-30555": {
+    "customer_id": "CUST-30555",
+    "legal_name": "Halcyon Capital Partners",
+    "type": "business",
+    "incorporation_country": "MT",
+    "incorporation_date": "2024-09-19",
+    "risk_rating": "high",
+    "kyc_status": "expired",
+    "kyc_last_reviewed": "2024-09-20",
+    "beneficial_owners": [
+      { "name": "Dmitri Sokolov", "ownership_pct": 100, "nationality": "RU" }
+    ],
+    "accounts": ["ACC-770233"],
+    "expected_monthly_volume_usd": 80000,
+    "business_description": "Investment advisory (shell indicators present)"
+  }
+}

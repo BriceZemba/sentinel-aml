@@ -16,7 +16,11 @@ def _data_dir() -> Path:
     override = os.getenv("SENTINEL_DATA_DIR")
     if override:
         return Path(override)
-    # agents/investigation-crewai/src/data_access.py -> repo root is parents[3]
+    # Prefer the copy bundled inside the package (src/data) so it travels with the
+    # agent when deployed to UiPath; fall back to the repo-root data/ for local dev.
+    bundled = Path(__file__).resolve().parent / "data"
+    if bundled.exists():
+        return bundled
     return Path(__file__).resolve().parents[3] / "data"
 
 

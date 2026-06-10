@@ -1,0 +1,42 @@
+[
+  {
+    "alert_id": "ALT-2026-0512-001",
+    "generated_at": "2026-05-12T07:30:00Z",
+    "rule": "STRUCTURING_SUB_THRESHOLD",
+    "rule_description": "Multiple credits just below the $10k CTR reporting threshold",
+    "customer_id": "CUST-10042",
+    "account_id": "ACC-558120",
+    "priority_hint": "medium",
+    "source_system": "TransactionMonitoring"
+  },
+  {
+    "alert_id": "ALT-2026-0512-002",
+    "generated_at": "2026-05-12T07:31:00Z",
+    "rule": "RAPID_MOVEMENT_FUNDS",
+    "rule_description": "Funds in and out within 24h, high-risk jurisdictions",
+    "customer_id": "CUST-30555",
+    "account_id": "ACC-770233",
+    "priority_hint": "high",
+    "source_system": "TransactionMonitoring"
+  },
+  {
+    "alert_id": "ALT-2026-0512-003",
+    "generated_at": "2026-05-12T07:33:00Z",
+    "rule": "STRUCTURING_SUB_THRESHOLD",
+    "rule_description": "Duplicate of ALT-2026-0512-001 (same customer, overlapping window)",
+    "customer_id": "CUST-10042",
+    "account_id": "ACC-558120",
+    "priority_hint": "medium",
+    "source_system": "TransactionMonitoring"
+  },
+  {
+    "alert_id": "ALT-2026-0512-004",
+    "generated_at": "2026-05-12T08:02:00Z",
+    "rule": "PAYROLL_VARIANCE",
+    "rule_description": "Low-confidence anomaly on routine payroll account",
+    "customer_id": "CUST-20871",
+    "account_id": "ACC-661004",
+    "priority_hint": "low",
+    "source_system": "TransactionMonitoring"
+  }
+]
