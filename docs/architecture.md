@@ -101,6 +101,6 @@ logged, and means swapping a connector never touches agent logic.
 The Investigator and Narrator are **LangGraph** graphs (LangChain ecosystem),
 packaged with the **UiPath Python SDK** and run as Orchestrator processes. The
 design also supports a **CrewAI** variant of the Investigator (role-based crew:
-Entity Analyst, Transaction Analyst, OSINT Analyst, Lead Investigator) — same
+Entity Analyst, Transaction Analyst, OSINT Analyst, Lead Investigator) same
 inputs/outputs, swappable behind the Maestro stage. UiPath remains the
 orchestration and governance layer regardless of framework.
