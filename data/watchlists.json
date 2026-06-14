@@ -1,6 +1,6 @@
 {
   "sanctions": [
-    { "name": "Blue Lagoon Ltd", "list": "OFAC-SDN", "program": "RUSSIA-EO14024", "country": "VG" },
+    { "name": "Blue Lagon Ltd", "list": "OFAC-SDN", "program": "RUSSIA-EO14024", "country": "VG" },
     { "name": "Dmitri Sokolov", "list": "EU-CONSOLIDATED", "program": "RUSSIA", "country": "RU" }
   ],
   "pep": [
