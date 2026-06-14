@@ -1,4 +1,4 @@
-# Build plan — from today to submission
+# Build plan from today to submission
 
 **Key dates (EDT):** Submission closes **June 29, 2026, 11:45pm**. Feedback window
 to **July 2**. Public voting **July 3–30**. Finalists present ~**July 23**.
@@ -34,12 +34,12 @@ Legend: 🧑‍💻 you (code) · ☁️ UiPath platform · 🎬 deliverables
 - [ ] 🎬 Finalize **README**; add real screenshots to `docs/images/`; confirm MIT license shows in repo About.
 - [ ] 🎬 Make the GitHub repo **public**.
 - [ ] 🎬 Fill the **Best Product Feedback** survey (use `docs/feedback-notes.md`).
-- [ ] 🎬 Complete the Devpost submission (see `docs/devpost-submission.md`) **before** the deadline — submit a day early.
+- [ ] 🎬 Complete the Devpost submission (see `docs/devpost-submission.md`) **before** the deadline submit a day early.
 - [ ] 🎬 During voting (Jul 3–30): share your public Devpost link to gather **People's Choice** votes.
 
 ## Risk buffers
 - If Maestro Case setup runs long, demo the agents + Action Center HITL + Orchestrator
   audit logs first; the case wiring can be shown even if one exception path is rough.
 - Keep the offline `run_local.py` paths working as a fallback for the video.
-- Don't let perfect block submission — a complete, working, well-documented core beats
+- Don't let perfect block submission a complete, working, well-documented core beats
   an ambitious half-wired one.
