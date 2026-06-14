@@ -1,12 +1,4 @@
-# Demo video script (≤ 5:00) — shot list
-
-The video is judged directly and is your shot at the **Best Demo / Presentation**
-special award ($3,000). Rules: ≤5 min, must show the solution *running* (not
-slides), walk the architecture, name the agents and how they're orchestrated, and
-show where humans fit. Show coding agents on screen for the bonus.
-
-**Golden rule:** spend ~70% on the product running, ~30% on architecture/voiceover.
-Record a clean run first, then narrate.
+# Demo video script shot list
 
 ---
 
@@ -14,7 +6,7 @@ Record a clean run first, then narrate.
 - On camera or voiceover over a single title card.
 - "Banks investigate millions of AML alerts a year, and ~95% are false positives.
   Each one is hand-investigated and must be signed off by a compliance officer.
-  Meet **Sentinel** — an agentic investigation desk on UiPath Maestro Case."
+  Meet **Sentinel** an agentic investigation desk on UiPath Maestro Case."
 
 ### 0:30–1:10 · Architecture (one diagram, narrated)
 - Show `docs/architecture.md` mermaid diagram.
@@ -28,10 +20,10 @@ Record a clean run first, then narrate.
 - Show the Triage agent output: typology, priority, and a **duplicate alert
   auto-closing** (great, fast "dynamic behavior" beat).
 
-### 1:40–2:40 · Investigation (the wow) — the high-risk case
+### 1:40–2:40 · Investigation (the wow) the high-risk case
 - Trigger the **Halcyon / ALT-2026-0512-002** case.
 - Show the Investigator running (Orchestrator job) and the evidence it produced:
-  sanctions hit, same-day layering, adverse media — risk score **100 → ESCALATE**.
+  sanctions hit, same-day layering, adverse media risk score **100 → ESCALATE**.
 - Quick cut to the terminal: `python run_local.py ALT-2026-0512-002` so viewers
   see the actual reasoning/evidence JSON. Emphasize **every finding cites a source**
   and **the score is transparent, not a black box**.
@@ -39,7 +31,7 @@ Record a clean run first, then narrate.
 ### 2:40–3:20 · Narrative + QA loop
 - Show the Narrator's drafted SAR narrative.
 - Show the **QA agent failing a thin case and looping it back to Investigation**
-  with specific gaps — "the path emerges as the work unfolds; this is why it's a
+  with specific gaps "the path emerges as the work unfolds; this is why it's a
   *case*, not a fixed flow."
 
 ### 3:20–4:10 · Human-in-the-loop (the accountability beat)
@@ -58,7 +50,7 @@ Record a clean run first, then narrate.
 
 ### 4:40–5:00 · Impact + close
 - "Sentinel turns a 2-hour manual investigation into minutes of agent work plus a
-  focused human decision — with full auditability. Reasoning to agents, exact
+  focused human decision with full auditability. Reasoning to agents, exact
   actions to robots, accountability to people. Orchestrated by UiPath Maestro."
 
 ---
@@ -67,5 +59,5 @@ Record a clean run first, then narrate.
 - 1080p, large fonts in terminal/IDE, hide secrets.
 - Pre-run everything once; keep takes short and cut.
 - Put the YouTube/Vimeo link **unlisted-public** (publicly viewable) in Devpost.
-- No copyrighted music — use silence or a royalty-free track.
+- No copyrighted music use silence or a royalty-free track.
 - Add captions; judges may watch muted.
