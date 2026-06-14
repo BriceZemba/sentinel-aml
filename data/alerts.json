@@ -1,6 +1,6 @@
 [
   {
-    "alert_id": "ALT-2026-0512-001",
+    "alert_id": "ALT-2026-0512-003",
     "generated_at": "2026-05-12T07:30:00Z",
     "rule": "STRUCTURING_SUB_THRESHOLD",
     "rule_description": "Multiple credits just below the $10k CTR reporting threshold",
