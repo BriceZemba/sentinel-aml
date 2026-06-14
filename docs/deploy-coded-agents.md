@@ -53,7 +53,7 @@ cd ../narrative
 # steps 1–5 again. graph name is `narrator`.
 ```
 The Narrator contains a human-in-the-loop `interrupt()`. On UiPath this creates an
-**Action Center task** and the job suspends until the MLRO submits the decision —
+**Action Center task** and the job suspends until the MLRO submits the decision 
 no extra code needed; the `uipath-langchain` runtime maps the interrupt to Action
 Center and supplies the checkpointer.
 
