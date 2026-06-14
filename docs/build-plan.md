@@ -1,12 +1,5 @@
 # Build plan from today to submission
 
-**Key dates (EDT):** Submission closes **June 29, 2026, 11:45pm**. Feedback window
-to **July 2**. Public voting **July 3–30**. Finalists present ~**July 23**.
-Today is well inside the window — this plan assumes ~4 weeks and is front-loaded so
-you have a working demo early and polish later.
-
-Legend: 🧑‍💻 you (code) · ☁️ UiPath platform · 🎬 deliverables
-
 ## Week 1 — Foundations & a runnable core (done / in progress)
 - [x] 🧑‍💻 Repo scaffolded; Investigator + Narrator coded agents passing tests offline.
 - [ ] ☁️ Confirm UiPath Labs access works; log into Automation Cloud; note tenant URL.
