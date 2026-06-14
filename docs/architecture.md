@@ -87,13 +87,13 @@ flowchart TD
 
 ## How decisions stay auditable
 Every evidence item carries a `source`. The risk score is a **transparent
-weighted sum** over evidence severity (see `synthesize.py`) — the LLM writes the
+weighted sum** over evidence severity (see `synthesize.py`) the LLM writes the
 rationale, never the score, so a reviewer can reconstruct the decision. Maestro
 records every stage transition, agent run (Orchestrator job logs), and the human
 decision (Action Center) against the case.
 
 ## Technology boundaries (governance)
-Agents never touch source systems directly — robots/API Workflows do, and hand
+Agents never touch source systems directly robots/API Workflows do, and hand
 clean data to agents. This keeps credentials in the UiPath vault, keeps actions
 logged, and means swapping a connector never touches agent logic.
 
