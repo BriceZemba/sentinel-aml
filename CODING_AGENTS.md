@@ -3,7 +3,7 @@
 UiPath AgentHack awards **up to +2 bonus points** (Platform Usage criterion) for
 solutions built with coding agents through *UiPath for Coding Agents*. This file
 is the verifiable record. To claim the full 2 points, the reviewer must be able
-to independently verify the claim — so this page is structured around evidence.
+to independently verify the claim so this page is structured around evidence.
 
 ## (a) Which coding agent / AI-assisted tool was used
 **Claude Code** (Anthropic's CLI coding agent), driving the **UiPath `uip` CLI**
@@ -22,7 +22,7 @@ Claude Code did the actual build, not just suggestions:
 | Docs | Architecture, Maestro setup, demo script, this evidence file |
 
 ## (c) Proof the output is meaningfully integrated
-The coded agents are the working core of the running solution — they execute on
+The coded agents are the working core of the running solution they execute on
 UiPath Orchestrator as part of the live Maestro case, and they pass an automated
 test suite:
 
@@ -55,16 +55,16 @@ uipath publish                         # uploads to Orchestrator
 
 After installing skills, Claude Code knows the canonical chain
 (`pack → publish → deploy run`), how to wait for a job, and how to inspect an
-Orchestrator folder — so the whole build/deploy/operate loop happens from the
+Orchestrator folder so the whole build/deploy/operate loop happens from the
 terminal under UiPath governance (policy, audit, credential vault, RBAC).
 
-## ▶️ What YOU still need to add before submitting (do not skip — this is the proof)
+## ▶️ What YOU still need to add before submitting (do not skip this is the proof)
 Reviewers want first-hand evidence. Capture at least one of:
 
 1. **Screenshots** of your Claude Code session building/deploying the agents
    (terminal showing `uipath pack/publish`, the agent editing files). Save to
    `docs/images/claude-code-*.png` and reference them here.
-2. **A prompt/session log** — export your Claude Code session and commit it as
+2. **A prompt/session log** export your Claude Code session and commit it as
    `docs/claude-code-session.md` (or a transcript snippet).
 3. **In the demo video**, show ~20–30 seconds of Claude Code + `uip` actually
    building or deploying part of the solution (the rules explicitly reward this).

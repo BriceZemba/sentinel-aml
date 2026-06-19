@@ -3,7 +3,7 @@
 Deterministic typology detection over the subject account: structuring
 (sub-threshold clustering), rapid in/out movement (layering), high-risk
 jurisdiction exposure, and activity vs. expected-volume deviation. The logic is
-explicit and auditable on purpose — regulators distrust opaque scoring.
+explicit and auditable on purpose regulators distrust opaque scoring.
 """
 from __future__ import annotations
 

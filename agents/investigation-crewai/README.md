@@ -1,4 +1,4 @@
-# Investigator — CrewAI variant
+# Investigator CrewAI variant
 
 A **drop-in alternative** to the LangGraph [Investigator](../investigation/), built
 with **CrewAI** instead. Same `InvestigationInput`/`InvestigationOutput` contract,
@@ -17,13 +17,13 @@ A role-based team that mirrors a real financial-intelligence unit:
 | Lead Investigator | Weigh evidence → recommendation + rationale | (synthesizes) |
 
 The **tools carry the auditable logic** ([`analysis.py`](src/analysis.py)); the LLM
-agents orchestrate and narrate — they never invent the risk score. Same scoring
+agents orchestrate and narrate they never invent the risk score. Same scoring
 weights as the LangGraph variant, so decisions match.
 
 ## Two execution modes (automatic)
-- **Crew mode** — with `ANTHROPIC_API_KEY` (or `OPENAI_API_KEY`) set and `crewai`
+- **Crew mode** with `ANTHROPIC_API_KEY` (or `OPENAI_API_KEY`) set and `crewai`
   installed, the real role-based crew runs.
-- **Deterministic mode** — otherwise the same tools run in sequence directly.
+- **Deterministic mode** otherwise the same tools run in sequence directly.
   Identical contract, fully offline, zero credentials. If a crew run errors, it
   falls back to deterministic so a case is never left without a result.
 

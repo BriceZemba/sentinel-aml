@@ -1,7 +1,7 @@
 [project]
 name = "sentinel-investigator-crewai"
 version = "0.1.0"
-description = "Sentinel AML Investigator — CrewAI variant, deployed to UiPath as a coded agent"
+description = "Sentinel AML Investigator - CrewAI variant, deployed to UiPath as a coded agent"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 dependencies = [

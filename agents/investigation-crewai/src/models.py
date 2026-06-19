@@ -1,4 +1,4 @@
-"""I/O contracts — identical to the LangGraph Investigator.
+"""I/O contracts identical to the LangGraph Investigator.
 
 The whole point of this variant: a different agent framework (CrewAI) behind the
 *same* UiPath contract. Maestro can swap one for the other at the Investigation

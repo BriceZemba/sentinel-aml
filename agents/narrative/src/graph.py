@@ -1,4 +1,4 @@
-"""Narrator graph — drafts the SAR and pauses for human sign-off.
+"""Narrator graph drafts the SAR and pauses for human sign-off.
 
 Flow:  draft -> human_review (INTERRUPT) -> finalize
 
@@ -7,7 +7,7 @@ via uipath-langchain, that interrupt is materialized as a **UiPath Action Center
 task** assigned to the MLRO / compliance officer: the job suspends, the case in
 Maestro shows "Awaiting human decision", and the graph resumes only when the
 officer submits the action. This is the binding, accountable, human-in-the-loop
-gate — no SAR is filed and no alert is dismissed without it.
+gate no SAR is filed and no alert is dismissed without it.
 
 The human's response shape:
     {

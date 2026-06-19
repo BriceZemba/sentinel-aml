@@ -1,0 +1,10 @@
+### UiPath CLI driven by Claude Code (UiPath for Coding Agents) ###
+
+uipath version 2.10.75
+
+-- uipath pack (Sentinel Investigator coded agent) --
+⠋ Packaging project ...Name       : sentinel-investigator
+Version    : 0.1.1
+Description: Sentinel AML Investigator - LangGraph coded agent deployed to UiPath
+Authors    : Wendemi Brice Roméo ZEMBA
+✓  Project successfully packaged.

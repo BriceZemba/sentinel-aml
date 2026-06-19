@@ -1,6 +1,6 @@
 # RPA robots & API Workflows
 
-These are the **deterministic, system-of-record actions** in the case — the work
+These are the **deterministic, system-of-record actions** in the case the work
 that should be done by a robot, not an LLM. Built in **UiPath Studio Web** as
 API Workflows (and where UI automation is needed, RPA). They are invoked by
 Maestro stages as tasks.
@@ -9,7 +9,7 @@ Maestro stages as tasks.
 > the JSON fixtures in `/data` so the solution is runnable end-to-end. The
 > workflow contracts below are what you wire to real connectors in production.
 
-## 1. `DataFetcher` (API Workflow) — Investigation stage
+## 1. `DataFetcher` (API Workflow) Investigation stage
 Pulls the raw material the Investigator agent reasons over, so the agent never
 touches source systems directly (governance + auditability).
 
@@ -20,13 +20,13 @@ touches source systems directly (governance + auditability).
 - Connectors in production: core-banking API, KYC/CDD system, sanctions provider (e.g. Dow Jones / WorldCheck).
 - Emits a UiPath Orchestrator job log entry → part of the case audit trail.
 
-## 2. `DocIntake` (Document Understanding) — Triage/Investigation
+## 2. `DocIntake` (Document Understanding) Triage/Investigation
 Runs **UiPath Document Understanding (IDP)** over KYC documents (passport,
 incorporation certificate, proof of address) to extract structured fields when a
 case requires fresh CDD (e.g. KYC expired). Output is added to case evidence with
 the `kyc` category.
 
-## 3. `Filer` (API Workflow + RPA) — Disposition stage, after human approval
+## 3. `Filer` (API Workflow + RPA) Disposition stage, after human approval
 The binding action. Only ever runs **after the MLRO approves** in Action Center.
 
 | In | Out |
@@ -39,7 +39,7 @@ The binding action. Only ever runs **after the MLRO approves** in Action Center.
 - On `disposition == DISMISSED`: writes the dismissal rationale to the case and
   closes it (no filing).
 
-## 4. `Notifier` (API Workflow) — cross-cutting
+## 4. `Notifier` (API Workflow) cross-cutting
 Posts case status changes / SLA-breach escalations to the compliance team
 (email / Teams / Slack connector). Triggered by Maestro escalation rules.
 

@@ -1,7 +1,7 @@
-# Best Product Feedback — notes to submit ($1,500, individual)
+# Best Product Feedback notes to submit ($1,500, individual)
 
 Fill the AgentHack feedback survey during the **Feedback Period (to July 2,
-2026)**. This prize goes to individuals and is **separate** from project judging —
+2026)**. This prize goes to individuals and is **separate** from project judging
 pure upside. Quality matters: it's scored on completeness, viability, and impact.
 Capture real friction as you build (don't write it after). Below are prompts +
 starter observations to expand with your own experience.
@@ -15,7 +15,7 @@ and integration suggestions all count.
 - Stage-data mapping: was passing `evidence[]`/`red_flags[]` between a coded agent
   and the next stage smooth? Note any type-coercion or schema-binding friction.
 - The split between "Narrator owns the Action Center task" vs. "approval as its own
-  stage" — was the recommended pattern discoverable in docs?
+  stage" was the recommended pattern discoverable in docs?
 - Loop-back routing (QA → Investigation) with a loop guard: how easy to express?
 - Audit view: did it capture agent + robot + human steps clearly enough for a
   compliance use case? What was missing?

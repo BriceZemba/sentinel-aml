@@ -1,13 +1,13 @@
-# Devpost project description — copy/paste ready
+# Devpost project description copy/paste ready
 
 > Paste the **Elevator pitch** into the short tagline field, and the **About the
-> project** body (the `##` sections) into the main description editor — they match
+> project** body (the `##` sections) into the main description editor they match
 > Devpost's default headers exactly. Set **Track = UiPath Maestro Case**.
 
 ---
 
 ## Elevator pitch (≤ 200 chars)
-An agentic financial-crime investigation desk on UiPath Maestro Case: AI agents investigate AML alerts, robots act on systems of record, and a compliance officer signs off every filing — fully audited.
+An agentic financial-crime investigation desk on UiPath Maestro Case: AI agents investigate AML alerts, robots act on systems of record, and a compliance officer signs off every filing fully audited.
 
 ---
 

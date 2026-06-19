@@ -24,7 +24,7 @@ def _llm():
 def _template(inp) -> str:
     flags = "\n".join(f"  - {f}" for f in inp.red_flags) or "  - (none recorded)"
     return (
-        f"SUSPICIOUS ACTIVITY REPORT — NARRATIVE (DRAFT)\n"
+        f"SUSPICIOUS ACTIVITY REPORT - NARRATIVE (DRAFT)\n"
         f"Subject: {inp.customer_name} ({inp.customer_id})\n"
         f"Triggering alert: {inp.alert_id}\n"
         f"Composite risk score: {inp.risk_score}/100\n\n"

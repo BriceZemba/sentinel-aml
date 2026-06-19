@@ -1,14 +1,14 @@
-# UiPath Community Forum — use-case post (finalist deliverable)
+# UiPath Community Forum use-case post (finalist deliverable)
 
 > Finalists must publish their solution as a use case on the UiPath Community
 > Forum. This is a ready-to-post draft. Paste it into a new topic in the
 > **Maestro / Agentic Automation** category, add your screenshots, and update the
-> links. Keep it practical — the community values reproducibility.
+> links. Keep it practical the community values reproducibility.
 
 ---
 
 ## Title
-**Sentinel — Agentic AML Investigation Case Manager on UiPath Maestro Case**
+**Sentinel Agentic AML Investigation Case Manager on UiPath Maestro Case**
 
 ## Category & tags
 Maestro · Case Management · Agentic Automation · Coded Agents · Agent Builder ·
@@ -24,8 +24,7 @@ the system-of-record work, and a compliance officer (MLRO) signs off every SAR
 filing in Action Center. The whole lifecycle is orchestrated and audited by
 Maestro. Built for UiPath AgentHack 2026, Track 1.
 
-**Repo (MIT):** https://github.com/<you>/sentinel-aml
-**Demo video:** <link>
+**Repo (MIT):** https://github.com/<BriceZemba>/sentinel-aml
 
 ---
 
@@ -33,15 +32,15 @@ Maestro. Built for UiPath AgentHack 2026, Track 1.
 ~95% of AML alerts are false positives, yet each one is investigated by hand and
 must be signed off by an accountable human. It's slow, inconsistent, and costly.
 The work is also unpredictable: each investigation branches differently as
-evidence emerges. That combination — a fixed goal but an emergent path, with
-mandatory human accountability — is exactly what **agentic case management** is for.
+evidence emerges. That combination a fixed goal but an emergent path, with
+mandatory human accountability is exactly what **agentic case management** is for.
 
 ## Why Maestro Case (not BPMN)
 The path isn't knowable up front: a duplicate auto-closes, a sanctions hit
 fast-tracks to a senior MLRO, a thin case loops back from QA to Investigation, an
 SLA breach escalates. Maestro Case lets the **Case Manager Agent** hold state and
 context across stages and decide paths dynamically, while **Stage Manager Agents**
-drive each phase — instead of forcing the work into a fixed flowchart.
+drive each phase instead of forcing the work into a fixed flowchart.
 
 ## Architecture
 ```
@@ -60,7 +59,7 @@ drive each phase — instead of forcing the work into a fixed flowchart.
 | MLRO / Compliance Officer | Action Center | **Human** | Approve filing / dismissal |
 
 A second **CrewAI** implementation of the Investigator ships in the repo with the
-*same* input/output contract — it drops in behind the Maestro Investigation stage
+*same* input/output contract it drops in behind the Maestro Investigation stage
 in place of the LangGraph one, demonstrating external frameworks running under one
 UiPath governance layer.
 
@@ -72,7 +71,7 @@ UiPath governance layer.
    corroborating **adverse media** → **risk score 100 → ESCALATE**, every finding
    citing a source.
 3. The Narrator drafts a SAR narrative; QA confirms each claim is evidence-backed.
-4. The case **suspends** at an Action Center task — the MLRO reviews and approves;
+4. The case **suspends** at an Action Center task the MLRO reviews and approves;
    a robot files the SAR and the case closes **SAR Filed**, fully audited.
 
 Contrast: a routine teacher-payroll alert scores < 30 and is auto-**dismissed**; a
@@ -93,7 +92,7 @@ built/deployed with **Claude Code via the `uip` CLI** (UiPath for Coding Agents)
 ## Results / impact
 Multi-hour manual investigations compress to minutes of agent work plus one
 focused human decision, with consistent rigor and a complete, reconstructable
-audit trail — fewer late filings and lower cost per alert. Production path: swap
+audit trail fewer late filings and lower cost per alert. Production path: swap
 the mocked connectors for core-banking, sanctions, and FinCEN E-Filing.
 
 ## Reproduce it
@@ -108,7 +107,7 @@ pytest -q
 # Narrator (LangGraph + Action Center HITL)
 cd ../narrative && python run_local.py approve   # FILED
 
-# Investigator (CrewAI variant — same contract)
+# Investigator (CrewAI variant same contract)
 cd ../investigation-crewai && python run_local.py ALT-2026-0512-002
 ```
 Full deploy + Maestro wiring: see the repo's `docs/` (`deploy-coded-agents.md`,
@@ -124,5 +123,5 @@ the bank's AML policy, and a fuller CrewAI/LangGraph A/B behind the same stage.
 
 ---
 
-*Questions welcome — happy to share the agent contracts and the Maestro case
+*Questions welcome happy to share the agent contracts and the Maestro case
 definition. Licensed MIT.*

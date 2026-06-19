@@ -1,11 +1,11 @@
-"""Investigator graph — the LangGraph crew deployed to UiPath as a coded agent.
+"""Investigator graph the LangGraph crew deployed to UiPath as a coded agent.
 
 Flow:  entity_resolution -> transaction_analysis -> adverse_media -> synthesize
 
 The graph is intentionally a focused investigation crew. The *dynamic, long-
 running* part of the lifecycle (looping back for more info, bouncing a weak
 narrative from QA, SLA escalation) is orchestrated one level up by UiPath Maestro
-Case across stages — that is where case management belongs. This agent's job is
+Case across stages that is where case management belongs. This agent's job is
 to turn one alert into auditable evidence + a scored recommendation.
 
 `uipath init` reads ``graph`` (exported below) via langgraph.json and generates

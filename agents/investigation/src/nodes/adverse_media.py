@@ -28,7 +28,7 @@ def adverse_media(state: InvestigationState) -> dict:
             evidence.append({
                 "category": "adverse_media",
                 "summary": f"Negative news: {entity}",
-                "detail": f"{hit['headline']} — {hit['source']}, {hit['date']} [tags: {', '.join(hit['tags'])}]",
+                "detail": f"{hit['headline']} - {hit['source']}, {hit['date']} [tags: {', '.join(hit['tags'])}]",
                 "source": f"osint:{hit['source']}",
                 "severity": sev,
             })

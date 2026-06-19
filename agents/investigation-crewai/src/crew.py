@@ -1,9 +1,9 @@
-"""CrewAI investigation crew — a role-based team of specialist analysts.
+"""CrewAI investigation crew - a role-based team of specialist analysts.
 
 Imported only when an LLM is available (see runner.py). The crew mirrors how a
 real financial-intelligence unit is staffed: specialists gather evidence with
 deterministic tools, a lead investigator weighs it and recommends. The *tools*
-carry the auditable logic; the LLM agents orchestrate and narrate — it never
+carry the auditable logic; the LLM agents orchestrate and narrate - it never
 invents the risk score.
 """
 from __future__ import annotations

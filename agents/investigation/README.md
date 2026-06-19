@@ -1,4 +1,4 @@
-# Investigator — coded agent (LangGraph)
+# Investigator coded agent (LangGraph)
 
 Turns one AML alert into auditable evidence + a scored recommendation. Deployed to
 UiPath as a coded agent; runs offline for development/testing.
@@ -6,10 +6,10 @@ UiPath as a coded agent; runs offline for development/testing.
 ## Graph
 `ingest → entity_resolution → transaction_analysis → adverse_media → synthesize`
 
-- **entity_resolution** — resolve customer + beneficial owners; screen sanctions/PEP; KYC freshness.
-- **transaction_analysis** — deterministic typologies: sub-threshold structuring, same-day layering, high-risk geography, profile deviation.
-- **adverse_media** — negative-news screen over subject + counterparties.
-- **synthesize** — transparent weighted risk score (0–100) + recommendation (`FILE_SAR` / `DISMISS` / `ESCALATE` / `REQUEST_INFO`). The LLM writes the rationale only; the score is reconstructable.
+- **entity_resolution** resolve customer + beneficial owners; screen sanctions/PEP; KYC freshness.
+- **transaction_analysis** deterministic typologies: sub-threshold structuring, same-day layering, high-risk geography, profile deviation.
+- **adverse_media** negative-news screen over subject + counterparties.
+- **synthesize** transparent weighted risk score (0–100) + recommendation (`FILE_SAR` / `DISMISS` / `ESCALATE` / `REQUEST_INFO`). The LLM writes the rationale only; the score is reconstructable.
 
 ## Contract
 - Input: `InvestigationInput` (`alert_id, customer_id, account_id, rule, priority`).

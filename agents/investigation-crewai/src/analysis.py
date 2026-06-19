@@ -1,4 +1,4 @@
-"""Pure analysis functions — no agent-framework dependency.
+"""Pure analysis functions no agent-framework dependency.
 
 These are the same auditable detections as the LangGraph variant's nodes. They are
 (a) wrapped as CrewAI tools in ``crew.py`` for the real crew, and (b) called
@@ -104,7 +104,7 @@ def screen_adverse_media(customer: dict, transactions: list[dict]) -> dict:
             sev = "high" if any(t in hit["tags"] for t in ("money-laundering", "trade-based-laundering")) else "medium"
             red_flags.append(f"Adverse media on {entity}: \"{hit['headline']}\" ({hit['source']}).")
             evidence.append({"category": "adverse_media", "summary": f"Negative news: {entity}",
-                             "detail": f"{hit['headline']} — {hit['source']}, {hit['date']}", "source": f"osint:{hit['source']}", "severity": sev})
+                             "detail": f"{hit['headline']} - {hit['source']}, {hit['date']}", "source": f"osint:{hit['source']}", "severity": sev})
     return {"evidence": evidence, "red_flags": red_flags}
 
 

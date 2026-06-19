@@ -1,4 +1,4 @@
-# Narrator — coded agent (LangGraph + Action Center HITL)
+# Narrator coded agent (LangGraph + Action Center HITL)
 
 Drafts a FinCEN "5 Ws" SAR narrative from the investigation evidence, then
 **suspends for an MLRO decision** before any filing.
@@ -22,7 +22,7 @@ resumes only when they submit. No SAR is filed without this human decision.
 - Input: `NarrativeInput` (investigation output + `customer_name`).
 - Output: `NarrativeOutput` (`disposition, sar_narrative, decided_by, decision_notes`).
 
-## Run / test (offline — walks the interrupt/resume cycle)
+## Run / test (offline walks the interrupt/resume cycle)
 ```bash
 python -m venv .venv && . .venv/Scripts/activate
 pip install langgraph langchain-core pydantic pytest

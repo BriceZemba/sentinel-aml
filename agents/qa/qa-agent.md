@@ -1,8 +1,8 @@
-# Quality Review Agent (low-code — UiPath Agent Builder)
+# Quality Review Agent (low-code UiPath Agent Builder)
 
 Runs at the **Quality Review** stage, *after* the SAR narrative is drafted and
 *before* it reaches the MLRO. Its job is to catch weak cases automatically so a
-human only ever reviews complete, defensible work — and to create a dynamic
+human only ever reviews complete, defensible work and to create a dynamic
 exception loop back to Investigation when the case is thin.
 
 ## Responsibilities
@@ -40,7 +40,7 @@ FAIL if any of these are true:
 
 For every reason you FAIL the case, add a precise, actionable string to `gaps`
 (e.g. "Narrative claims sanctions exposure but no sanctions evidence item is
-present — re-run sanctions screening on all counterparties").
+present re-run sanctions screening on all counterparties").
 
 If PASS, gaps must be empty. Output strictly in schema. Be strict: it is cheaper
 to loop back than to file a defective SAR.
@@ -48,4 +48,4 @@ to loop back than to file a defective SAR.
 
 ## Maestro wiring (the dynamic exception loop)
 - `qa_result == FAIL` → Maestro transitions the case **back to Investigation**, passing `gaps` as `follow_up_requests`. The Investigator re-runs only the requested checks. This is the "path emerges as work unfolds" behavior that makes this a *case*, not a fixed flow.
-- A **loop guard** (max 2 rework cycles) escalates to a human analyst if QA keeps failing — preventing infinite loops.
+- A **loop guard** (max 2 rework cycles) escalates to a human analyst if QA keeps failing preventing infinite loops.

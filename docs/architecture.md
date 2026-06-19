@@ -10,7 +10,7 @@ orchestrates. Nothing acts outside Maestro's governance and audit trail.
 |---|---|---|---|
 | Case Manager Agent | Maestro Case (native) | Orchestrator | Owns case state/lifecycle, decides paths |
 | Stage Manager Agents | Maestro Case (native) | Orchestrator | Drive each stage to completion + SLAs |
-| Triage Agent | Agent Builder | Low-code agent | Dedup/classify/route — fast, policy-grounded |
+| Triage Agent | Agent Builder | Low-code agent | Dedup/classify/route fast, policy-grounded |
 | Investigator | Python + LangGraph (`uipath-langchain`) | Coded agent | Multi-step reasoning over messy evidence |
 | Narrator | Python + LangGraph (`uipath-langchain`) | Coded agent | Drafts regulator-grade narrative; HITL gate |
 | QA Agent | Agent Builder | Low-code agent | Strict, schema-checkable sufficiency review |
@@ -87,13 +87,13 @@ flowchart TD
 
 ## How decisions stay auditable
 Every evidence item carries a `source`. The risk score is a **transparent
-weighted sum** over evidence severity (see `synthesize.py`) — the LLM writes the
+weighted sum** over evidence severity (see `synthesize.py`) the LLM writes the
 rationale, never the score, so a reviewer can reconstruct the decision. Maestro
 records every stage transition, agent run (Orchestrator job logs), and the human
 decision (Action Center) against the case.
 
 ## Technology boundaries (governance)
-Agents never touch source systems directly — robots/API Workflows do, and hand
+Agents never touch source systems directly robots/API Workflows do, and hand
 clean data to agents. This keeps credentials in the UiPath vault, keeps actions
 logged, and means swapping a connector never touches agent logic.
 
@@ -101,6 +101,6 @@ logged, and means swapping a connector never touches agent logic.
 The Investigator and Narrator are **LangGraph** graphs (LangChain ecosystem),
 packaged with the **UiPath Python SDK** and run as Orchestrator processes. The
 design also supports a **CrewAI** variant of the Investigator (role-based crew:
-Entity Analyst, Transaction Analyst, OSINT Analyst, Lead Investigator) — same
+Entity Analyst, Transaction Analyst, OSINT Analyst, Lead Investigator) same
 inputs/outputs, swappable behind the Maestro stage. UiPath remains the
 orchestration and governance layer regardless of framework.

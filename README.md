@@ -134,9 +134,44 @@ Optional: set `ANTHROPIC_API_KEY` in a `.env` to have Claude write the rationale
 and SAR narrative (the agents run with a deterministic template if it's absent,
 so judges can test with zero credentials).
 
-## Deploy to UiPath (full solution)
+## Setup Instructions
 
-Follow, in order:
+There are two ways to configure and run Sentinel for judging.
+
+### Option A: Run the coded agents offline (fastest, no UiPath account)
+See **Quickstart** above: create a venv, `pip install langgraph langchain-core pydantic pytest`,
+then `python run_local.py …` and `pytest -q`. This exercises the real agent logic (risk scoring,
+cited evidence, and the human-in-the-loop interrupt/resume) with **zero credentials**.
+
+### Option B: Run the full solution on UiPath Automation Cloud
+**Prerequisites:** a UiPath Automation Cloud / Labs tenant · **Node.js** (`npm i -g @uipath/cli`) · **Python 3.11–3.13**.
+
+1. **(Bonus) Install UiPath skills for your coding agent:** `uip skills install --agent claude`.
+2. **Deploy the coded agents** (Investigator and Narrator; the CrewAI variant is optional). From each
+   agent folder (e.g. `agents/investigation`): `uipath auth` → `uipath init` → `uipath pack` →
+   `uipath publish`, then **Deploy** the package to the **Shared** folder. *(Publish creates a version;
+   you must also **Deploy** it for the case to use it.)*
+3. **Set up an unattended runtime** so Maestro can start agents automatically: create a **Robot account**
+   (Admin → Accounts & Groups), assign it to the **Shared** folder with the *Automation User* role, on a
+   **Serverless** machine (Orchestrator → Machines → **Unattended setup**).
+4. **Build the low-code agents** in Agent Builder (Studio Web): **Sentinel Triage** and **Sentinel QA**
+   paste the prompts/schemas from `agents/triage/` and `agents/qa/`, keep inputs as **String** (no enums),
+   then **Publish**.
+5. **Build the Maestro Case** (the `Process.bpmn` in the repo is the reference): Start event with the alert
+   inputs → Triage → Route gateway → Investigation → Quality Review → Narrative & Human Review →
+   Filing gateway → Filer / Dismissed.
+6. **Run an instance:** Orchestrator → **Shared** → **Start job → Sentinel AML Case**, with this input:
+   ```json
+   { "alert_id": "ALT-2026-0512-002", "customer_id": "CUST-30555", "account_id": "ACC-770233",
+     "rule": "RAPID_MOVEMENT_FUNDS", "customer_risk_rating": "high", "customer_name": "Halcyon Capital Partners" }
+   ```
+7. The case runs Triage → Investigation → Quality Review, then **suspends** at Narrative. Go to **Actions**
+   (Action Center), open the SAR task, and submit **`approve`** → the case resumes → **Filer** → ends at
+   **SAR Filed**. Submit **`reject`** to see the **Dismissed** path. *(More sample alerts are in `data/alerts.json`.)*
+
+**Expected result:** risk score **100**, recommendation **ESCALATE**, a filed SAR, and a full audit trail across the case.
+
+**Detailed step-by-step guides:**
 1. **[docs/deploy-coded-agents.md](docs/deploy-coded-agents.md)**  `uip auth → init → pack → publish`, run on Orchestrator.
 2. **[docs/agent-builder-setup.md](docs/agent-builder-setup.md)**  build Triage + QA agents.
 3. **[docs/maestro-case-setup.md](docs/maestro-case-setup.md)**  define the case, stages, SLAs, escalation, and wire every actor.

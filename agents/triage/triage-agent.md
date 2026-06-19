@@ -1,4 +1,4 @@
-# Triage Agent (low-code — UiPath Agent Builder)
+# Triage Agent (low-code UiPath Agent Builder)
 
 The first agent in the case. Built in **Agent Builder** (Studio Web) so the
 submission demonstrates *both* low-code and coded agents. It runs at the Triage

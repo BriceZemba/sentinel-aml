@@ -4,9 +4,9 @@
 same `InvestigationOutput` schema as the LangGraph variant.
 
 Two execution modes, chosen automatically:
-  • **Crew mode** — if an LLM key is configured AND CrewAI is installed, the
+  • **Crew mode** if an LLM key is configured AND CrewAI is installed, the
     role-based crew (KYC/Sanctions, Transaction, OSINT analysts + Lead) runs.
-  • **Deterministic mode** — otherwise, the same analysis tools are executed in
+  • **Deterministic mode** otherwise, the same analysis tools are executed in
     sequence directly. The contract is identical, so the case behaves the same and
     the repo stays testable with zero credentials.
 """
