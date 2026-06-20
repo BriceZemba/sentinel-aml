@@ -20,7 +20,7 @@ for compliance sign-off. It is slow, expensive, inconsistent, and **mandated by
 law to keep a human accountable** for the final filing decision.
 
 This is the textbook case for **agentic case management**: the *goal* is fixed
-(decide and document each alert correctly), but the *path is not* every
+(decide and document each alert correctly), but the *path is not*. Every
 investigation branches differently as evidence emerges, loops back when a case is
 thin, and escalates when sanctions or SLAs are in play.
 
@@ -54,19 +54,19 @@ them and keeps a complete audit trail.
 
 | Component | Role in Sentinel |
 |---|---|
-| **UiPath Maestro  Case Management** | Orchestrates the 5-stage case lifecycle, SLAs, escalation, audit trail (Case Manager + Stage Manager agents) |
+| **UiPath Maestro Case Management** | Orchestrates the 5-stage case lifecycle, SLAs, escalation, audit trail (Case Manager + Stage Manager agents) |
 | **Agent Builder (low-code agents)** | Triage Agent, Quality Review Agent |
 | **Coded Agents (Python SDK + `uipath-langchain`)** | Investigator and Narrator LangGraph agents |
 | **Action Center** | Human-in-the-loop MLRO sign-off (the Narrator's interrupt) |
 | **Studio Web / API Workflows + RPA** | DataFetcher, Filer, Notifier robots |
 | **Document Understanding (IDP)** | KYC document extraction |
 | **Orchestrator** | Hosts/schedules the coded agents and robots; job logs feed the audit trail |
-| **UiPath for Coding Agents (`uip` CLI + skills)** | This solution was **built and deployed with Claude Code**  see [CODING_AGENTS.md](CODING_AGENTS.md) |
+| **UiPath for Coding Agents (`uip` CLI + skills)** | This solution was **built and deployed with Claude Code** (see [CODING_AGENTS.md](CODING_AGENTS.md)) |
 
 ## Agent type
 
-**Both.** Sentinel deliberately blends **low-code agents** (Triage, QA  Agent
-Builder) with **coded agents** (Investigator, Narrator Python/LangGraph deployed
+**Both.** Sentinel deliberately blends **low-code agents** (Triage and QA, in Agent
+Builder) with **coded agents** (Investigator and Narrator, Python/LangGraph deployed
 via the UiPath Python SDK), plus deterministic **RPA/API robots**, all governed by
 Maestro. This hybrid is intentional: reasoning tasks go to agents, exact
 system-of-record tasks go to robots, and the legally accountable decision goes to
@@ -74,8 +74,8 @@ a human.
 
 ## Coding agents (bonus)
 
-This entire repository the LangGraph crews, the risk-scoring logic, the tests,
-and the deployment scripts was built using **Claude Code** driving the **UiPath
+This entire repository (the LangGraph crews, the risk-scoring logic, the tests,
+and the deployment scripts) was built using **Claude Code** driving the **UiPath
 `uip` CLI and skills** ("UiPath for Coding Agents"). Evidence (prompt log,
 screenshots, the exact CLI flow) is in **[CODING_AGENTS.md](CODING_AGENTS.md)**.
 
@@ -109,7 +109,7 @@ sentinel-aml/
 └── CODING_AGENTS.md   How Claude Code built this (bonus-point evidence)
 ```
 
-## Quickstart (run the agents offline no UiPath account needed)
+## Quickstart (run the agents offline, no UiPath account needed)
 
 Prerequisites: **Python 3.11–3.13**, `git`.
 
@@ -172,9 +172,9 @@ cited evidence, and the human-in-the-loop interrupt/resume) with **zero credenti
 **Expected result:** risk score **100**, recommendation **ESCALATE**, a filed SAR, and a full audit trail across the case.
 
 **Detailed step-by-step guides:**
-1. **[docs/deploy-coded-agents.md](docs/deploy-coded-agents.md)**  `uip auth → init → pack → publish`, run on Orchestrator.
-2. **[docs/agent-builder-setup.md](docs/agent-builder-setup.md)**  build Triage + QA agents.
-3. **[docs/maestro-case-setup.md](docs/maestro-case-setup.md)**  define the case, stages, SLAs, escalation, and wire every actor.
+1. **[docs/deploy-coded-agents.md](docs/deploy-coded-agents.md)**: `uipath auth → init → pack → publish`, then deploy on Orchestrator.
+2. **[docs/agent-builder-setup.md](docs/agent-builder-setup.md)**: build the Triage + QA low-code agents.
+3. **[docs/maestro-case-setup.md](docs/maestro-case-setup.md)**: define the case, stages, SLAs, escalation, and wire every actor.
 
 ## License
 
